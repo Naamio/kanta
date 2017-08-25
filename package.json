@@ -1,0 +1,35 @@
+{
+    "name": "kanta",
+    "version": "0.0.0",
+    "description": "Web application framework based on Vue, for Naamio projects.",
+    "main": "lib/kanta.js",
+    "types": "lib/types/index.d.ts",
+    "scripts": {
+      "build": "webpack --config build/webpack.config.dev.js",
+      "build:release": "webpack --config build/webpack.config.prod.js",
+      "test": "mocha-webpack --webpack-config build/webpack.config.test.js test/**/*.spec.ts"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git@gitlab.com:Omnijar/Naamio/kanta.git"
+    },
+    "keywords": [
+      "logging",
+      "typescript",
+      "api",
+      "browser"
+    ],
+    "author": "Phil J. Laszkowicz (phil@fillip.pro)",
+    "license": "MIT",
+    "devDependencies": {
+      "@types/mocha": "^2.2.48",
+      "mocha": "^5.0.1",
+      "mocha-webpack": "^1.0.1",
+      "ts-loader": "^3.5.0",
+      "ts-node": "^4.1.0",
+      "typescript": "^2.7.2",
+      "webpack": "^3.11.0",
+      "webpack-node-externals": "^1.6.0"
+    }
+  }
+  

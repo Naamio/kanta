@@ -1,0 +1,4 @@
+interface ApplicationDelegate {
+    applicationWillLaunch();
+    applicationDidLaunch();
+}

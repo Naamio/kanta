@@ -1,5 +1,5 @@
 import { Controller } from ".";
-import View from "../view";
+import { View } from "../view";
 
 abstract class ViewController extends Controller {
     

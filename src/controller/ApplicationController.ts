@@ -1,3 +1,5 @@
+import ApplicationDelegate from "./ApplicationDelegate";
+
 abstract class ApplicationController implements ApplicationDelegate {
     
     private readonly runnable: () => void;

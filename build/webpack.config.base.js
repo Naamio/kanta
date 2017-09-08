@@ -5,9 +5,10 @@ const commonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 
 module.exports = {
     entry: {
-        'kanta': "./src/index.ts"
+        'kanta': "./src/index.ts",
     },
     externals: {
+        "vue": "Vue"
     },
     output: {
         filename: '[name].js',
@@ -26,7 +27,11 @@ module.exports = {
             }]
     },
     resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js'
+        },
         extensions: [".ts", ".json", ".js"]
     },
-    plugins: []
+    plugins: [
+    ]
 }

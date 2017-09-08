@@ -14,10 +14,9 @@
     "url": "git@gitlab.com:Omnijar/Naamio/kanta.git"
   },
   "keywords": [
-    "logging",
+    "browser",
     "typescript",
-    "api",
-    "browser"
+    "ui"
   ],
   "author": "Phil J. Laszkowicz (phil@fillip.pro)",
   "license": "MIT",
@@ -28,8 +27,8 @@
     "ts-loader": "^3.5.0",
     "ts-node": "^4.1.0",
     "typescript": "^2.7.2",
-    "vue": "^2.5.13",
     "webpack": "^3.11.0",
     "webpack-node-externals": "^1.6.0"
-  }
+  },
+  "peerDependencies": {}
 }

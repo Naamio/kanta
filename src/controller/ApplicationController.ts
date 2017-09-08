@@ -2,10 +2,12 @@ import ApplicationDelegate from "./ApplicationDelegate";
 
 abstract class ApplicationController implements ApplicationDelegate {
     
-    private readonly runnable: () => void;
+    static shared: ApplicationController;
 
-    constructor(runnable: () => void) {
-        this.runnable = runnable;
+    private _runnable: () => void;
+
+    constructor() {
+        ApplicationController.shared = this;
     }
 
     applicationWillLaunch() {
@@ -16,8 +18,10 @@ abstract class ApplicationController implements ApplicationDelegate {
         throw new Error("Method not implemented.");
     }
 
-    private run(runnable: () => void) {
-        if (this.runnable) {
+    run(runnable: () => void) {
+        this._runnable = runnable;
+
+        if (this._runnable) {
             runnable();
         }
     }

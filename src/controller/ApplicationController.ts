@@ -1,9 +1,16 @@
 import ApplicationDelegate from "./ApplicationDelegate";
 
+/** 
+ * `ApplicationController` manages the lifecycle conditioning of the 
+ * **Kanta** application. 
+ */
 abstract class ApplicationController implements ApplicationDelegate {
     
     private runnable: () => void;
 
+    /** 
+     * Initialises a new `ApplicationController` instance.
+     */
     constructor() {
     }
 

@@ -14,7 +14,7 @@ test:
 
 build:
   image: node:9.3.0
-  stage: test
+  stage: build
   before_script:
     # install ssh-agent
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'

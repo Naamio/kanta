@@ -36,7 +36,8 @@ class NotificationCenter {
     }
 
     /**
-     * Removes all entries specifying a given observer from the notification center's dispatch table.
+     * Removes all entries specifying a given observer from the notification 
+     * center's dispatch table.
      */
     removeObserver(observer: any, name: Notification.Name | undefined, object: any | undefined) {
 
@@ -57,3 +58,5 @@ class NotificationCenter {
         
     }
 }
+
+export default NotificationCenter;

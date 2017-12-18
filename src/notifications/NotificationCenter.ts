@@ -3,6 +3,7 @@ import log from "tipu";
 import { OperationQueue } from "../tasks";
 
 import * as Notification from "./Notification";
+import { NotificationName } from "./Notification";
 
 
 class NotificationCenter {
@@ -22,7 +23,7 @@ class NotificationCenter {
      * includes a notification queue and a block to add to the queue, 
      * and an optional notification name and sender.
      */
-    addObserverForBlock(name: Notification.Name | undefined, object: any | undefined, queue: OperationQueue | undefined, block: (Notification)) {
+    addObserverForBlock(name: NotificationName | undefined, object: any | undefined, queue: OperationQueue | undefined, block: (Notification)) {
 
     }
 
@@ -31,7 +32,7 @@ class NotificationCenter {
      * observer and a notification selector, and an optional notification 
      * name and sender.
      */
-    addObserver(observer: any, name: Notification.Name | undefined, selector: (Notification) => void, object: any | undefined) {
+    addObserver(observer: any, name: NotificationName | undefined, selector: (Notification) => void, object: any | undefined) {
 
     }
 
@@ -39,7 +40,7 @@ class NotificationCenter {
      * Removes all entries specifying a given observer from the notification 
      * center's dispatch table.
      */
-    removeObserver(observer: any, name: Notification.Name | undefined, object: any | undefined) {
+    removeObserver(observer: any, name: NotificationName | undefined, object: any | undefined) {
 
     }
 
@@ -54,7 +55,7 @@ class NotificationCenter {
      * Creates a notification with a given name, sender, and information 
      * and posts it to the notification center.
      */
-    post(name: Notification.Name, object: any | undefined, userInfo: { [index: string] : any } | undefined = undefined) {
+    post(name: NotificationName, object: any | undefined, userInfo: { [index: string] : any } | undefined = undefined) {
         
     }
 }

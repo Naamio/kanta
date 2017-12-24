@@ -60,8 +60,10 @@ class ObservationCenter {
      */
     postObservation(observation: Observation) {
         this._observers
-            .filter(observable => observable.name === observation.name)
-            .forEach(observable => observable.selector(observation));
+            .filter(observable => (observation.name.equals(observable.name!)))
+            .forEach(observable => {
+                observable.selector(observation);
+            });
     }
 
     /**

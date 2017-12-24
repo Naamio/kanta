@@ -1,6 +1,21 @@
-class ObservationName extends String {
+class ObservationName {
+
+    static isEqual(name: ObservationName, candidate: ObservationName): boolean {
+        return (name.toString() === candidate.toString());
+    }
+
+    private _name: string;
+
     constructor(name: string) {
-        super(name);
+        this._name = name;
+    }
+
+    toString(): string {
+        return this._name;
+    }
+
+    equals(candidate: ObservationName): boolean {
+        return ObservationName.isEqual(this, candidate);
     }
 }
 

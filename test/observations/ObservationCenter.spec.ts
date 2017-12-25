@@ -20,7 +20,18 @@ describe("Test Observation Center", () => {
 
     it("should support receiving from an Observation Center", (done) => {
         ObservationCenter.defaultCenter.addObserver(this, new ObservationName("test"), (observation) => {
+            ObservationCenter.defaultCenter.removeObserver(this, new ObservationName("test"), this);
             done();
+        }, this);
+
+        ObservationCenter.defaultCenter.post(new ObservationName("test"), this, undefined);
+    });
+
+    it("should support sending myself to an Observation Center", (done) => {
+        ObservationCenter.defaultCenter.addObserver(this, new ObservationName("test"), (observation) => {
+            if (observation.object == this) {
+                done();
+            }
         }, this);
 
         ObservationCenter.defaultCenter.post(new ObservationName("test"), this, undefined);

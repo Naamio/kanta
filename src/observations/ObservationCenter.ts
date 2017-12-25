@@ -52,7 +52,14 @@ class ObservationCenter {
      * center's dispatch table.
      */
     removeObserver(observer: any, name: ObservationName | undefined, object: any | undefined) {
-
+        this._observers
+            .filter(observer => ((observer == observer) && (observer.name!.equals(name!))))
+            .forEach(observable => {
+                var index = this._observers.indexOf(observable, 0);
+                if (index > -1) {
+                    this._observers.splice(index, 1);
+                }
+            });
     }
 
     /**

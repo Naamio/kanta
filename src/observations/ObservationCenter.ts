@@ -77,7 +77,7 @@ class ObservationCenter {
      * Creates a observation with a given name, sender, and information 
      * and posts it to the observation center.
      */
-    post(name: ObservationName, object: any | undefined, userInfo: { [index: string] : any } | undefined = undefined) {
+    post(name: ObservationName, object: any | undefined, userInfo: Map<string, any> | undefined = undefined) {
         var observation = new Observation(name, object, userInfo);
 
         this.postObservation(observation);

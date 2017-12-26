@@ -27,7 +27,7 @@ class Observation {
 
     userInfo: { [index: string]: any } | undefined;
 
-    constructor(name: ObservationName, object: any | undefined, userInfo: { [index: string]: any } | undefined) {
+    constructor(name: ObservationName, object: any | undefined, userInfo: Map<string, any> | undefined) {
         this.name = name;
         this.object = object;
         this.userInfo = userInfo;

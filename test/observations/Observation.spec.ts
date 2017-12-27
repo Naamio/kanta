@@ -14,7 +14,7 @@ describe("Test Observation", () => {
     });
 
     it("should support userInfo in an Observation", () => {
-        var userInfo: { [index: string]: any } = [];
+        var userInfo = new Map<string, any>();
 
         userInfo["foo"] = "bar";
 

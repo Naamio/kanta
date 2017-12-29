@@ -1,16 +1,4 @@
-import { ApplicationController, ApplicationDelegate, Controller, ViewController } from "./controller";
-import { Observation, ObservationCenter, ObservationName } from "./observations"
-import { Repository } from "./repository"
-import { View } from "./view";
-
-export {
-    ApplicationController,
-    ApplicationDelegate,
-    Controller,
-    Observation, 
-    ObservationCenter,
-    ObservationName,
-    Repository,
-    ViewController,
-    View
-}
+export { ApplicationController, ApplicationDelegate, Controller, ViewController } from "./controller";
+export { Observation, ObservationCenter, ObservationName } from "./observations"
+export { Repository } from "./repository"
+export { View } from "./view";

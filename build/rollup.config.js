@@ -1,5 +1,6 @@
 import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve';
+import sizes from 'rollup-plugin-sizes';
 import typescript from 'rollup-plugin-typescript2';
 
 const output = [
@@ -39,6 +40,9 @@ const plugins = [
         tsconfig: 'tsconfig.json',
         useTsconfigDeclarationDir: true
     }),
+    sizes({
+        detail: true
+    })
 ]
 
 export default {

@@ -22,12 +22,16 @@ abstract class ApplicationController implements ApplicationDelegate {
         throw new Error("Method not implemented.");
     }
 
-    run(runnable: () => void) {
+    run(runnable: () => void = this.defaultRunnable) {
         this.runnable = runnable;
 
         if (this.runnable) {
             runnable();
         }
+    }
+
+    private defaultRunnable() {
+
     }
 }
 

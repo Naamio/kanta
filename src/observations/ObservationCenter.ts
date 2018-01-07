@@ -81,6 +81,7 @@ class ObservationCenter {
         var observation = new Observation(name, object, userInfo);
 
         this.postObservation(observation);
+        log.trace(`Posting "${name}" observation`);
     }
 }
 

@@ -44,6 +44,7 @@ typings/
 
 # Optional npm cache directory
 .npm
+.rpt2_cache
 
 # Optional eslint cache
 .eslintcache

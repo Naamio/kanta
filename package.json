@@ -5,9 +5,12 @@
   "main": "lib/kanta.js",
   "types": "lib/types/index.d.ts",
   "scripts": {
-    "build": "webpack --config build/webpack.config.dev.js",
-    "build:release": "webpack --config build/webpack.config.prod.js",
-    "test": "mocha-webpack --webpack-config build/webpack.config.test.js test/**/*.spec.ts"
+    "build": "rollup -c build/rollup.config.js --environment INCLUDE_DEPS,BUILD:development",
+    "build:release": "rollup -c build/rollup.config.js --environment INCLUDE_DEPS,BUILD:production",
+    "prepare": "npm run build",
+    "prepublish": "npm run build:release",
+    "start": "npm run dev",
+    "test": "export TS_NODE_COMPILER_OPTIONS='{ \"module\": \"commonjs\" }' && mocha -r ts-node/register test/**/*.spec.ts"
   },
   "repository": {
     "type": "git",
@@ -21,17 +24,19 @@
   "author": "Phil J. Laszkowicz (phil@fillip.pro)",
   "license": "MIT",
   "devDependencies": {
-    "@types/mocha": "^2.2.48",
+    "@types/chai": "^4.1.3",
+    "@types/mocha": "^5.2.0",
+    "@types/node": "^10.0.8",
     "chai": "^4.1.2",
-    "mocha": "^5.0.1",
-    "mocha-webpack": "^1.0.1",
+    "mocha": "^5.1.1",
+    "rollup": "^0.58.2",
+    "rollup-plugin-commonjs": "^9.1.3",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-typescript2": "^0.14.0",
     "tipu": "^0.0.0",
-    "ts-loader": "^3.5.0",
-    "ts-node": "^4.1.0",
-    "typescript": "^2.7.2",
-    "vue": "^2.5.13",
-    "webpack": "^3.11.0",
-    "webpack-node-externals": "^1.6.0"
+    "ts-loader": "^4.3.0",
+    "ts-node": "^6.0.3",
+    "typescript": "^2.8.3"
   },
   "peerDependencies": {}
 }

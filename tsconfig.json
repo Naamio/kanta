@@ -5,7 +5,7 @@
         "allowJs": false,
         "alwaysStrict": true,
         "declaration": true,
-        "declarationDir": "types",
+        "declarationDir": "lib/types",
         "experimentalDecorators": true,
         "inlineSourceMap": false,
         "lib": [
@@ -14,7 +14,7 @@
             "es2015.promise",
             "es6"
         ],
-        "module": "es2015",
+        "module": "esnext",
         "moduleResolution": "node",
         "noImplicitAny": false,
         "noImplicitThis": false,
@@ -25,7 +25,7 @@
         "sourceMap": true,
         "strictNullChecks": true,
         "suppressImplicitAnyIndexErrors": true,
-        "target": "es5",
+        "target": "es6",
         "typeRoots": [
             "types"
         ]

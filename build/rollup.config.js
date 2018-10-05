@@ -1,7 +1,6 @@
 import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve';
-import sizes from 'rollup-plugin-sizes';
-import typescript from 'rollup-plugin-typescript2';
+import typescript from 'rollup-plugin-typescript';
 
 const output = [
     { format: 'cjs', suffix: '.cjs' },
@@ -22,6 +21,12 @@ const output = [
 });
 
 const plugins = [
+    resolve({
+        browser: true,
+        jsnext: true,
+        main: true,
+        module: true
+    }),
     commonjs({
         exclude: 'node_modules/process-es6/**',
         include: [
@@ -30,20 +35,10 @@ const plugins = [
             'node_modules/tipu/lib/tipu.js': ['tipu']
         }
     }),
-    resolve({
-        browser: true,
-        jsnext: true,
-        main: true,
-        module: true
-    }),
     typescript({
-        tsconfig: 'tsconfig.json',
-        useTsconfigDeclarationDir: true
-    }),
-    sizes({
-        detail: true
+        tsconfig: './src/tsconfig.json'
     })
-]
+];
 
 export default {
     external: [

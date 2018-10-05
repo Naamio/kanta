@@ -1,11 +1,11 @@
 {
-    "version": "2.7.2",
+    "version": "3.1.1",
     "compileOnSave": false,
     "compilerOptions": {
         "allowJs": false,
         "alwaysStrict": true,
         "declaration": true,
-        "declarationDir": "lib/types",
+        "declarationDir": "../lib/types",
         "experimentalDecorators": true,
         "inlineSourceMap": false,
         "lib": [
@@ -19,21 +19,21 @@
         "noImplicitAny": false,
         "noImplicitThis": false,
         "noLib": false,
-        "outDir": "./",
+        "outDir": "../lib",
         "preserveConstEnums": true,
         "removeComments": true,
         "sourceMap": true,
         "strictNullChecks": true,
         "suppressImplicitAnyIndexErrors": true,
-        "target": "es6",
+        "target": "es5",
         "typeRoots": [
             "types"
         ]
     },
     "include": [
-        "./src/**/*.ts"
+        "./**/*.ts"
     ],
     "exclude": [
-        "./node_modules/"
+        "../node_modules/"
     ]
 }
